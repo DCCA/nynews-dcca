@@ -6,9 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DCCA/nynews-dcca"
+  },
   "author": "Daniel Andrade",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-terser": "^1.2.0"
   }
 }
