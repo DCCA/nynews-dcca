@@ -1,0 +1,11 @@
+{
+  "name": "nynews-dcca",
+  "version": "1.0.0",
+  "description": "new app to bundle news from NY times",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Andrade",
+  "license": "ISC"
+}
