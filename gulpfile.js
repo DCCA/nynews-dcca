@@ -30,9 +30,7 @@ gulp.task('reload', function(done) {
 gulp.task("watch", function() {
     gulp.watch("js/*.js", gulp.series("scripts" , "reload"));
     gulp.watch("./*.html", gulp.series("reload"));
+    gulp.watch("style/*.css", gulp.series("reload"));
 });
 
 gulp.task('default', gulp.parallel('browser-sync', 'watch'));
-
-// gulp.series > You can use this to pass a series of tasks
-// gulp.parallel > You can use to run tasks in parallel

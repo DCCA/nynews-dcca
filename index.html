@@ -1,19 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
+
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8">
+  <title>NYT News</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>title</title>
-  </head>
-  <body>
-        <h1>GOooooo</h1>
-      <h1>Teste</h1>
-      <p>Vai</p>
-      <p>teste</p>
-      <h2>Novo teste</h2>
-      <h3>vai</h3>
-      <p>de novo</p>
-      <p>teste</p>
-    <script src="./js/index.min.js"></script>
-  </body>
+  <!-- Styles -->
+  <link rel="stylesheet" href="./style/css-reset.css">
+  <link rel="stylesheet" href="./style/style.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i&display=swap" rel="stylesheet">
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <main>
+    <img class='logo' src="./assets/images/nyt-logo.svg" alt="nyt-logo">
+    <div class="drop-down">
+      <p>Choose a section:</p>
+      <select>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+    </div>
+    <ul class="news">
+      <li class="card">
+        <img
+          src="https://images.pexels.com/photos/3181458/pexels-photo-3181458.jpeg?cs=srgb&dl=photo-of-person-standing-on-cliff-edge-3181458.jpg&fm=jpg"
+          alt="">
+        <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.</figcaption>
+      </li>
+      <li class="card">
+        <img
+          src="https://images.pexels.com/photos/3181458/pexels-photo-3181458.jpeg?cs=srgb&dl=photo-of-person-standing-on-cliff-edge-3181458.jpg&fm=jpg"
+          alt="">
+        <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.</figcaption>
+      </li>
+      <li class="card">
+        <img
+          src="https://images.pexels.com/photos/3181458/pexels-photo-3181458.jpeg?cs=srgb&dl=photo-of-person-standing-on-cliff-edge-3181458.jpg&fm=jpg"
+          alt="">
+        <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.</figcaption>
+      </li>
+      <li class="card">
+        <img
+          src="https://images.pexels.com/photos/3181458/pexels-photo-3181458.jpeg?cs=srgb&dl=photo-of-person-standing-on-cliff-edge-3181458.jpg&fm=jpg"
+          alt="">
+        <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.</figcaption>
+      </li>
+    </ul>
+    <footer>
+      <p>&#169; Copyright 2019 Instanews</p>
+    </footer>
+  </main>
+  <script src="./js/index.min.js"></script>
+</body>
+
 </html>

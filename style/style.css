@@ -1,0 +1,72 @@
+/* The base font size is 16px and it HEX code is #ffffff */
+
+body, html{
+    background-color: black;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif, 'Arial';
+    color: #ffffff;
+}
+
+main{
+    margin: 6em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer{
+    margin: 6em auto 0;
+    justify-self: baseline;
+}
+
+.logo img{
+    margin: 0 auto 1em;
+}
+
+p{
+    color: white;
+}
+
+select{
+    background-color: white;
+    margin: 1em;
+    width: 100%;
+    font-size: 1em;
+}
+
+.drop-down{
+    margin: 1em auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+img{
+    height: 100%;
+}
+
+figcaption{
+    position: absolute;
+    bottom: 0;
+    height: 24%;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: left;
+    padding: 1em;
+    word-wrap: break-word;
+}
+
+.card{
+    position: relative;
+    width: 100%;
+    height: 24em;
+    background-color: aquamarine;
+    overflow: hidden;
+}
+
+ul{
+    width: 100%;
+    /* display: none; */
+}
+
+
