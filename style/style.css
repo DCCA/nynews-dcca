@@ -62,6 +62,9 @@ figcaption{
     height: 24em;
     background-color: aquamarine;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 ul{
