@@ -17,8 +17,9 @@ gulp.task('scripts', function(){
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: "./"
-        }
+            baseDir: './',
+            cors: true
+        },
     });
 });
 
@@ -27,10 +28,10 @@ gulp.task('reload', function(done) {
     done();
 });
 
-gulp.task("watch", function() {
-    gulp.watch("js/*.js", gulp.series("scripts" , "reload"));
-    gulp.watch("./*.html", gulp.series("reload"));
-    gulp.watch("style/*.css", gulp.series("reload"));
+gulp.task('watch', function() {
+    gulp.watch('js/*.js', gulp.series('scripts' , 'reload'));
+    gulp.watch('./*.html', gulp.series('reload'));
+    gulp.watch('style/*.css', gulp.series('reload'));
 });
 
 gulp.task('default', gulp.parallel('browser-sync', 'watch'));

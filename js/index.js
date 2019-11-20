@@ -1,7 +1,6 @@
-import Card from "./Cards.min.js";
+import Card from './Cards.min.js';
 
-
-const sectionsDrop = document.querySelector('.sections');
+const news = $('.news')
 const nytUrl = 'https://api.nytimes.com/svc/topstories/v2/'
 const endUrl = '.json?api-key=CLl9cdH4BgVqWucoFHZ3wdB1rsXAtoBt'
 const arrSection = [
@@ -40,34 +39,22 @@ function start(){
     arrSection.forEach(element => {
         $('.sections').append( '<option value="' + element + '">' + element + '</option>');
     });
-    createCards();
-}
-
-function createCards(){
-    sectionsDrop.addEventListener('change', function(event){
+    // sectionsDrop.addEventListener('change', createCards);
+    $('.sections').on('change', function( event ) {
         let section = event.target.value;
-        let jData = getNews(section);
-        console.log(jData);
-        jData = JSON.stringify(jData);
-        console.log(jData);
-        jData = JSON.parse(jData);
-        console.log(jData);
-        // for(let i = 0; i < 5; i++){
-        // }
-    });
-}
-
-
-function getNews(section) {
-    $.getJSON(nytUrl + section + endUrl)
-        .done(function (json) {
-            let jData = json;
-            // jData = JSON.parse(jData)
-            // console.log(jData);
-            return jData;
+        $.ajax({
+          method: 'GET',
+          url: nytUrl + section + endUrl
         })
-        .fail(function (jqxhr, textStatus, error) {
-            var err = textStatus + ', ' + error;
-            return 'Request Failed: ' + err;
-        });
+          .done(function(data) {
+            let jData = data;
+            for(let i = 0; i < 5 ; i++){
+                let newCard = new Card(jData.results[i].abstract, jData.results[i].url,jData.results[i].multimedia[4].url);
+                newCard.create(news);
+            }
+          })
+          .fail(function() {
+            console.log('FAIL!');
+          });
+      });
 }

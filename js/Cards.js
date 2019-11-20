@@ -1,10 +1,10 @@
 export default class Card {
-    constructor(img, text) {
+    constructor(abstract, img, url) {
+        this.abstract = abstract;
         this.img = img;
-        this.text = text;
+        this.url = url;
     }
     create(section){
-        let sec = section
-        sec.append();
+        section.append('<li class="card"><img src="' + this.img + '"alt=""><figcaption>' + this.abstract + '</figcaption></li>');
     }
   }
