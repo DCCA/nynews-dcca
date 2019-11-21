@@ -34,4 +34,4 @@ gulp.task('watch', function() {
     gulp.watch('style/*.css', gulp.series('reload'));
 });
 
-gulp.task('default', gulp.parallel('browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('scripts','browser-sync', 'watch'));

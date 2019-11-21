@@ -2,6 +2,7 @@ import Card from './Cards.min.js';
 
 $( document ).ready(function() {
 
+let thereIsNews = false;
 const news = $('.news')
 const nytUrl = 'https://api.nytimes.com/svc/topstories/v2/'
 const endUrl = '.json?api-key=CLl9cdH4BgVqWucoFHZ3wdB1rsXAtoBt'
@@ -38,28 +39,49 @@ const arrSection = [
 start();
 
 function start(){
+    // Create the options in the dropdown
     arrSection.forEach(element => {
         $('.sections').append( '<option value="' + element + '">' + element + '</option>');
     });
-    // sectionsDrop.addEventListener('change', createCards);
-    $('.sections').on('change', function( event ) {
-        let section = event.target.value;
-        $('.news').text('');
-        $.ajax({
-          method: 'GET',
-          url: nytUrl + section + endUrl
-        })
-          .done(function(data) {
-            let jData = data;
-            for(let i = 0; i < 20 ; i++){
-                let newCard = new Card(jData.results[i].abstract, jData.results[i].url,jData.results[i].multimedia[4].url);
-                newCard.create(news);
-            }
-          })
-          .fail(function() {
-            console.log('FAIL!');
-          });
-      });
+    // Add the event listener
+    $('.sections').on('change', makeApiCall)
 }
 
+function toggleClasses(){
+  $('main').toggleClass('main-with-news');
+  $('.logo').toggleClass('logo-with-news');
+  $('.search-box').toggleClass('search-box-with-news');
+  $('select').toggleClass('select-with-news');
+}
+
+function createNewsCards(jData, news){
+  for(let i = 0; i < 20 ; i++){
+    let newCard = new Card(jData.results[i].abstract, jData.results[i].url,jData.results[i].multimedia[4].url);
+    newCard.create(news);
+  }
+}
+
+function makeApiCall(event){
+  let section = event.target.value;
+  $.ajax({
+    method: 'GET',
+    url: nytUrl + section + endUrl
+  })
+    .done(function(data) {
+      let jData = data;
+      if(!thereIsNews){
+        toggleClasses();
+      }
+      $('.news').text('');
+      createNewsCards(jData, news);
+      thereIsNews = true;
+    })
+    .fail(function() {
+      console.log('FAIL!');
+    });
+  }
+
+
+// End of document ready function
 });
+
