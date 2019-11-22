@@ -43,6 +43,15 @@ select{
     font-size: 1em;
 }
 
+.loader{
+    height: 6em;
+    display: none;
+    position: absolute;
+    margin: 6em auto;
+    background: #0000006e;
+    border-radius: 5em;
+}
+
 .drop-down{
     margin: 1em auto;
     display: flex;
@@ -51,7 +60,7 @@ select{
 }
 
 img{
-    height: 18em;
+    height: 20em;
     object-fit: fit;
 }
 
@@ -92,6 +101,11 @@ ul{
     .card{
         width: 33.3333%;
     }
+
+    .loader{
+        margin: 1em auto;
+    }
+
     /* Dynamic classes */
     .main-with-news{
         margin: 2em auto;
@@ -118,7 +132,7 @@ ul{
     }
 
     .search-box{
-        display: flex;
+        display: inline-flex;
         justify-content: left;
     }
 
@@ -133,6 +147,11 @@ ul{
     footer p{
         margin-left: 2em;
     }
+
+    .loader{
+        margin: 1em auto;
+    }
+
     /* Dynamic classes */
     .main-with-news{
         margin: 2em auto;
