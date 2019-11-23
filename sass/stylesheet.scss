@@ -1,5 +1,170 @@
-$blue: blue;
+@import '../sass/css-reset.scss', '../sass/fonts.scss';
 
-h1{
-    color: $blue;
+/* The base font size is 16px and it HEX code is #ffffff */
+body, html{
+    background-color: black;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif, 'Arial';
+    color: #ffffff;
 }
+
+main{
+    margin: 6em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer{
+    margin: 3em auto 0;
+    justify-self: baseline;
+}
+
+.search-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    margin: 0 auto 1em;
+    height: 12em;
+}
+
+p{
+    color: white;
+}
+
+select{
+    background-color: white;
+    margin: 1em;
+    width: 80%;
+    font-size: 1em;
+}
+
+.loader{
+    height: 6em;
+    display: none;
+    position: absolute;
+    margin: 6em auto;
+    background: #0000006e;
+    border-radius: 5em;
+}
+
+.drop-down{
+    margin: 1em auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+img{
+    height: 20em;
+    object-fit: fit;
+}
+
+figcaption{
+    position: absolute;
+    bottom: 0;
+    height: 24%;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: left;
+    padding: 1em;
+    word-wrap: break-word;
+}
+
+.card{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul{
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .search-box{
+        flex-direction: row;
+    }
+
+    .news{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card{
+        width: 33.3333%;
+    }
+
+    .loader{
+        margin: 1em auto;
+    }
+
+    /* Dynamic classes */
+    .main-with-news{
+        margin: 2em auto;
+    }
+    .logo-with-news{
+        height: 6em;
+        margin: 0 2em 3em;
+    }
+    .search-box-with-news{
+        align-items: end;
+    }
+    .select-with-news{
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    main{
+        display: inline-block;
+    }
+
+    #logo{
+        margin: 0 3em 0 2em;
+    }
+
+    .search-box{
+        display: inline-flex;
+        justify-content: left;
+    }
+
+    .drop-down{
+        margin: 1em 0;
+    }
+
+    .card{
+        width: 25%;
+    }
+
+    footer p{
+        margin-left: 2em;
+    }
+
+    .loader{
+        margin: 1em auto;
+    }
+
+    /* Dynamic classes */
+    .main-with-news{
+        margin: 2em auto;
+    }
+    .logo-with-news{
+        height: 6em;
+        margin: 0 2em 2em;
+    }
+    .search-box-with-news{
+        align-items: end;
+    }
+    .select-with-news{
+        width: 60%;
+    }
+  }
