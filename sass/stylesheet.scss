@@ -1,11 +1,30 @@
 @import '../sass/css-reset.scss', '../sass/fonts.scss';
 
+// Variables
+$font: 'Open Sans', sans-serif, 'Arial';
+$font-size: 16px;
+$desktop-width: 1024px;
+$tablet-width: 768px;
+
+// Basic functions
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
 /* The base font size is 16px and it HEX code is #ffffff */
 body, html{
     background-color: black;
-    font-size: 16px;
+    font-size: $font-size;
     font-weight: 300;
-    font-family: 'Open Sans', sans-serif, 'Arial';
+    font-family: $font;
     color: #ffffff;
 }
 
@@ -14,11 +33,19 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include desktop{
+        display: inline-block;
+    }
 }
 
 footer{
     margin: 3em auto 0;
     justify-self: baseline;
+    p{
+        @include desktop {
+            margin-left: 2em;
+        }
+    }
 }
 
 .search-box{
@@ -26,6 +53,13 @@ footer{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @include tablet{
+        flex-direction: row;
+    }
+    @include desktop{
+        display: inline-flex;
+        justify-content: left;
+    }
 }
 
 .logo{
@@ -51,6 +85,9 @@ select{
     margin: 6em auto;
     background: #0000006e;
     border-radius: 5em;
+    @include tablet{
+        margin: 1em auto;
+    }
 }
 
 .drop-down{
@@ -58,6 +95,9 @@ select{
     display: flex;
     align-items: center;
     flex-direction: column;
+    @include desktop{
+        margin: 1em 0;
+    }
 }
 
 img{
@@ -82,89 +122,60 @@ figcaption{
     display: flex;
     align-items: center;
     justify-content: center;
+    @include tablet{
+        width: 33.3333%;
+    }
+    @include desktop{
+        width: 25%;
+    }
 }
 
 ul{
     width: 100%;
 }
 
-@media only screen and (min-width: 768px) {
-    .search-box{
-        flex-direction: row;
-    }
-
-    .news{
+.news{
+    @include tablet{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
     }
+}
 
-    .card{
-        width: 33.3333%;
-    }
-
-    .loader{
-        margin: 1em auto;
-    }
-
-    /* Dynamic classes */
-    .main-with-news{
+.main-with-news{
+    @include tablet{
         margin: 2em auto;
     }
-    .logo-with-news{
+    @include desktop{
+        margin: 2em auto;
+    }
+}
+.logo-with-news{
+    @include tablet{
         height: 6em;
         margin: 0 2em 3em;
     }
-    .search-box-with-news{
+    @include desktop{
+        height: 6em;
+        margin: 0 2em 2em;
+    }
+}
+.search-box-with-news{
+    @include tablet{
         align-items: end;
     }
-    .select-with-news{
+    @include desktop{
+        align-items: end;
+    }
+}
+.select-with-news{
+    @include tablet{
         width: 60%;
     }
 }
 
-@media only screen and (min-width: 1024px) {
-    main{
-        display: inline-block;
-    }
-
-    #logo{
+#logo{
+    @include desktop{
         margin: 0 3em 0 2em;
     }
-
-    .search-box{
-        display: inline-flex;
-        justify-content: left;
-    }
-
-    .drop-down{
-        margin: 1em 0;
-    }
-
-    .card{
-        width: 25%;
-    }
-
-    footer p{
-        margin-left: 2em;
-    }
-
-    .loader{
-        margin: 1em auto;
-    }
-
-    /* Dynamic classes */
-    .main-with-news{
-        margin: 2em auto;
-    }
-    .logo-with-news{
-        height: 6em;
-        margin: 0 2em 2em;
-    }
-    .search-box-with-news{
-        align-items: end;
-    }
-    .select-with-news{
-        width: 60%;
-    }
-  }
+}
