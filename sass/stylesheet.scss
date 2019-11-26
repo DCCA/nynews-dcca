@@ -5,6 +5,7 @@ $font: 'Open Sans', sans-serif, 'Arial';
 $font-size: 16px;
 $desktop-width: 1024px;
 $tablet-width: 768px;
+$card-width: 100%;
 
 // Basic functions
 @mixin desktop {
@@ -33,9 +34,6 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include desktop{
-        display: inline-block;
-    }
 }
 
 footer{
@@ -117,21 +115,29 @@ figcaption{
 
 .card{
     position: relative;
-    width: 100%;
+    width: $card-width;
+    height: 20em;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-size: cover;
+    background-position: center;
     @include tablet{
-        width: 33.3333%;
+        width: $card-width / 3;
     }
     @include desktop{
-        width: 25%;
+        width: $card-width / 4;
     }
 }
 
 ul{
     width: 100%;
+    li{
+        .card{
+            height: 20em;
+        }
+    }
 }
 
 .news{

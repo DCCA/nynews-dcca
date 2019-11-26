@@ -61,7 +61,7 @@ function toggleClasses(){
 
 function createNewsCards(jData, news){
   for(let i = 0; i < 12 ; i++){
-    let newCard = new Card(jData.results[i].abstract, jData.results[i].url,jData.results[i].multimedia[4].url);
+    let newCard = new Card(jData.results[i].abstract, jData.results[i].url,jData.results[i].multimedia[4].url, i);
     newCard.create(news);
   }
 }
@@ -75,6 +75,7 @@ function makeApiCall(event){
   })
     .done(function(data) {
       loader.toggle();
+      console.log(data);
       let jData = data;
       if(!thereIsNews){
         toggleClasses();

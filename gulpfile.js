@@ -9,7 +9,7 @@ const gulp = require('gulp'),
 
 gulp.task('sass', function(){
     return gulp
-        .src('./sass/*.scss')
+        .src('./sass/stylesheet.scss')
         .pipe(sass())
         // Plugins
         .pipe(
