@@ -1,14 +1,10 @@
 export default class Card {
-    constructor(abstract, url, img, id) {
+    constructor(abstract, url, img) {
         this.abstract = abstract;
         this.url = url;
         this.img = img;
-        this.id = id;
     }
     create(section){
-        section.append('<li class="card" id="' + this.id + '"><a href="' + this.url + '" target="_blank"></a><figcaption>' + this.abstract + '</figcaption></li>');
-        $('#' + this.id).css({'background-image': 'url(' + this.img + ')'});
+        section.append('<li class="card" style="background-image: url(' + this.img + ');' + this.id + '"><a href="' + this.url + '" target="_blank"></a><figcaption>' + this.abstract + '</figcaption></li>');
     }
   }
-
-//   'height': '20em'

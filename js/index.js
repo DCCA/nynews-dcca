@@ -63,8 +63,14 @@ function toggleClasses(){
 
 function createNewsCards(jData, news){
   for(let i = 0; i < 12 ; i++){
-    let newCard = new Card(jData.results[i].abstract, jData.results[i].url,jData.results[i].multimedia[4].url, i);
-    newCard.create(news);
+    let abstract = jData.results[i].abstract,
+        urlC = jData.results[i].url,
+        imgArr = jData.results[i].multimedia.length
+    if(abstract !== '' && urlC !== '' && imgArr > 3){
+      let img = jData.results[i].multimedia[4].url;
+      let newCard = new Card(abstract, urlC, img);
+      newCard.create(news);
+    }
   }
 }
 

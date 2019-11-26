@@ -66,6 +66,9 @@ footer{
 .logo{
     margin: 0 auto 1em;
     height: 12em;
+    @include tablet{
+        height: 10em;
+    }
 }
 
 p{
@@ -121,11 +124,22 @@ figcaption{
     justify-content: center;
     background-size: cover;
     background-position: center;
+    animation-duration: 3s;
+    animation-name: slidein;
     @include tablet{
         width: $card-width / 3;
     }
     @include desktop{
         width: $card-width / 4;
+    }
+}  
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+    }
+  
+    to {
+      margin-left: 0%;
     }
 }
 
