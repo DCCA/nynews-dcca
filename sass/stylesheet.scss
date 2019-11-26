@@ -124,8 +124,7 @@ figcaption{
     justify-content: center;
     background-size: cover;
     background-position: center;
-    animation-duration: 3s;
-    animation-name: slidein;
+    overflow: hidden;
     @include tablet{
         width: $card-width / 3;
     }
@@ -133,23 +132,14 @@ figcaption{
         width: $card-width / 4;
     }
 }  
-@keyframes slidein {
-    from {
-      margin-left: 100%;
-    }
-  
-    to {
-      margin-left: 0%;
-    }
+
+ul{
+    width: 100%;
 }
 
 a{
     width: 100%;
     height: 100%;
-}
-
-ul{
-    width: 100%;
 }
 
 .news{
