@@ -7,48 +7,105 @@ $( document ).ready(function() {
 
 
 let thereIsNews = false;
-const news = $('.news');
-const sections = $('.sections');
-const loader = $('.loader');
-const nytUrl = 'https://api.nytimes.com/svc/topstories/v2/';
-const APIkey = MY_KEY
-const endUrl = '.json?api-key=' + APIkey;
-const arrSection = [ 
-    'Select your category',
-    'arts',
-    'automobiles',
-    'books',
-    'business',
-    'fashion',
-    'food',
-    'health',
-    'home',
-    'insider',
-    'magazine',
-    'movies',
-    'national',
-    'nyregion',
-    'obituaries',
-    'opinion',
-    'politics',
-    'realestate',
-    'science',
-    'sports',
-    'sundayreview',
-    'technology',
-    'theater',
-    'tmagazine',
-    'travel',
-    'upshot',
-    'world'
+const news = $('.news'),
+      sections = $('.sections'),
+      loader = $('.loader'),
+      nytUrl = 'https://api.nytimes.com/svc/topstories/v2/',
+      APIkey = MY_KEY,
+      endUrl = '.json?api-key=' + APIkey,
+      objSection = [
+  { value : '',
+  text: 'Sections...', 
+  },
+  { value : 'arts',
+  text: 'Arts', 
+  },
+  { value : 'arts',
+    text: 'Arts', 
+  },
+  { value : 'automobiles',
+    text: 'Automobiles', 
+  },
+  { value : 'books',
+    text: 'Book', 
+  },
+  { value : 'business',
+    text: 'Business', 
+  },
+  { value : 'fashion',
+    text: 'Fashion', 
+  },
+  { value : 'food',
+    text: 'Food', 
+  },
+  { value : 'health',
+    text: 'Health', 
+  },
+  { value : 'home',
+    text: 'Home', 
+  },
+  { value : 'insider',
+    text: 'Insider', 
+  },
+  { value : 'magazine',
+    text: 'Magazine', 
+  },
+  { value : 'movies',
+    text: 'Movies', 
+  },
+  { value : 'national',
+    text: 'National', 
+  },
+  { value : 'nyregion',
+    text: 'NY Region', 
+  },
+  { value : 'obituaries',
+    text: 'Obituaries', 
+  },
+  { value : 'opinion',
+    text: 'Opinion', 
+  },
+  { value : 'politics',
+    text: 'Politics', 
+  },
+  { value : 'realestate',
+    text: 'Real State', 
+  },
+  { value : 'science',
+    text: 'Science', 
+  },
+  { value : 'sports',
+    text: 'Sports', 
+  },
+  { value : 'sundayreview',
+    text: 'Sunday Review', 
+  },
+  { value : 'technology',
+    text: 'Technology', 
+  },
+  { value : 'theater',
+    text: 'Theater', 
+  },
+  { value : 'tmagazine',
+    text: 'T Magazine', 
+  },
+  { value : 'travel',
+    text: 'Travel', 
+  },
+  { value : 'upshot',
+    text: 'Upshot', 
+  },
+  { value : 'world',
+    text: 'World', 
+  }
 ]
 
 start();
 
 function start(){
     // Create the options in the dropdown
-    arrSection.forEach(element => {
-        sections.append( '<option value="' + element + '">' + element + '</option>');
+    objSection.forEach(element => {
+        sections.append( '<option value="' + element.value + '">' + element.text + '</option>');
     });
     // Add the event listener
     sections.on('change', makeApiCall)
@@ -83,7 +140,6 @@ function makeApiCall(event){
   })
     .done(function(data) {
       loader.toggle();
-      console.log(data);
       let jData = data;
       if(!thereIsNews){
         toggleClasses();
@@ -91,6 +147,7 @@ function makeApiCall(event){
       news.text('');
       createNewsCards(jData, news);
       thereIsNews = true;
+      $('.card').addClass('animate');
     })
     .fail(function() {
       loader.toggle();
