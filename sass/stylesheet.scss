@@ -30,7 +30,6 @@ $card-width: 100%;
 body, html{
     background-color: black;
     font-size: $font-size;
-    font-weight: 300;
     font-family: $font;
     color: #ffffff;
 }
@@ -55,6 +54,14 @@ footer{
     }
 }
 
+.logo{
+    margin: 0 auto 1em;
+    height: 10em;
+    @include desktop{
+        margin: 0 3em 0 2em;
+    }
+}
+// Search Box
 .search-box{
     @extend %flex-center;
     flex-direction: column;
@@ -67,14 +74,6 @@ footer{
     }
 }
 
-.logo{
-    margin: 0 auto 1em;
-    height: 12em;
-    @include tablet{
-        height: 10em;
-    }
-}
-
 p{
     color: white;
 }
@@ -83,7 +82,7 @@ select{
     background-color: white;
     margin: 1em;
     width: 80%;
-    font-size: 1em;
+    font-size: $font-size;
 }
 
 .loader{
@@ -107,17 +106,7 @@ select{
         margin: 1em 0;
     }
 }
-
-figcaption{
-    position: absolute;
-    bottom: 0;
-    height: 24%;
-    background-color: rgba(0, 0, 0, 0.5);
-    text-align: left;
-    padding: 1em;
-    word-wrap: break-word;
-}
-
+// Fail message
 .warning-icon{
     height: 2em;
     padding: 0.6em;
@@ -130,15 +119,28 @@ figcaption{
     background-color: #ffc53a;
     font-weight: 800;
 }
+// Cards
+figcaption{
+    position: absolute;
+    bottom: 0;
+    height: 24%;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: left;
+    padding: 1em;
+    word-wrap: break-word;
+}
 
 .card{
     position: relative;
     width: $card-width;
     height: 20em;
     overflow: hidden;
-    @extend %flex-center;
     background-size: cover;
     background-position: center;
+    &:hover{
+        opacity: 0.8;
+    }
+    @extend %flex-center;
     @include tablet{
         width: $card-width / 3;
     }
@@ -164,6 +166,7 @@ a{
     }
 }
 
+// Dynamic classes
 .main-with-news{
     @include tablet{
         margin: 2em auto;
@@ -193,12 +196,6 @@ a{
 .select-with-news{
     @include tablet{
         width: 60%;
-    }
-}
-
-#logo{
-    @include desktop{
-        margin: 0 3em 0 2em;
     }
 }
 
