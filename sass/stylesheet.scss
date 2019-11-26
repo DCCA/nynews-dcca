@@ -7,6 +7,12 @@ $desktop-width: 1024px;
 $tablet-width: 768px;
 $card-width: 100%;
 
+%flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 // Basic functions
 @mixin desktop {
   @media (min-width: $desktop-width) {
@@ -50,10 +56,8 @@ footer{
 }
 
 .search-box{
-    display: flex;
+    @extend %flex-center;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     @include tablet{
         flex-direction: row;
     }
@@ -97,8 +101,7 @@ select{
 
 .drop-down{
     margin: 1em auto;
-    display: flex;
-    align-items: center;
+    @extend %flex-center;
     flex-direction: column;
     @include desktop{
         margin: 1em 0;
@@ -113,7 +116,6 @@ figcaption{
     text-align: left;
     padding: 1em;
     word-wrap: break-word;
-    text-overflow: ellipsis;
 }
 
 .warning-icon{
@@ -122,9 +124,7 @@ figcaption{
 }
 
 .fail{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %flex-center;
     width: 100%;
     text-align: center;
     background-color: #ffc53a;
@@ -136,12 +136,9 @@ figcaption{
     width: $card-width;
     height: 20em;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %flex-center;
     background-size: cover;
     background-position: center;
-    overflow: hidden;
     @include tablet{
         width: $card-width / 3;
     }
