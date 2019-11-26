@@ -20,4 +20,4 @@ If you want to clone the repo and try yourself, you should follow this steps:
 3. Create a config.js file in the main directory of the project
 4. Create a new variable inside the config.js with the name MY_KEY
 5. Import this variable to the index.js
-You should be good to go!
+6. Enjoy your news!
