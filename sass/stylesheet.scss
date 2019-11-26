@@ -86,7 +86,8 @@ select{
     height: 6em;
     display: none;
     position: absolute;
-    margin: 6em auto;
+    left: 46%;
+    margin: auto;
     background: #0000006e;
     border-radius: 5em;
     @include tablet{
@@ -113,6 +114,21 @@ figcaption{
     padding: 1em;
     word-wrap: break-word;
     text-overflow: ellipsis;
+}
+
+.warning-icon{
+    height: 2em;
+    padding: 0.6em;
+}
+
+.fail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    background-color: #ffc53a;
+    font-weight: 800;
 }
 
 .card{

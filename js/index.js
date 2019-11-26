@@ -16,10 +16,7 @@ const news = $('.news'),
       objSection = [
   { value : '',
   text: 'Sections...', 
-  },
-  { value : 'arts',
-  text: 'Arts', 
-  },
+  },  
   { value : 'arts',
     text: 'Arts', 
   },
@@ -151,7 +148,8 @@ function makeApiCall(event){
     })
     .fail(function() {
       loader.toggle();
-      console.log('FAIL!');
+      news.text('');
+      news.append('<li class="fail"><img class="warning-icon" src="../../assets/images/warning.svg" alt="warning-sign">Fail to load... Try again</li>');
     });
   }
 
