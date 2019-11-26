@@ -15,7 +15,7 @@ $card-width: 100%;
 }
 
 @mixin tablet {
-  @media (min-width: $desktop-width) {
+  @media (min-width: $tablet-width) {
     @content;
   }
 }
@@ -34,6 +34,9 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include desktop {
+        align-items: baseline;
+    }
 }
 
 footer{
@@ -98,11 +101,6 @@ select{
     }
 }
 
-img{
-    height: 20em;
-    object-fit: fit;
-}
-
 figcaption{
     position: absolute;
     bottom: 0;
@@ -123,16 +121,17 @@ figcaption{
     justify-content: center;
     background-size: cover;
     background-position: center;
-    a{
-        width: 100%;
-        height: 100%;
-    }
     @include tablet{
         width: $card-width / 3;
     }
     @include desktop{
         width: $card-width / 4;
     }
+}
+
+a{
+    width: 100%;
+    height: 100%;
 }
 
 ul{
