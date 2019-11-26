@@ -8,6 +8,10 @@ ehthumbs.db
 *[Tt]humbs.db
 *.Trashes
 
+# Files
+config.js
+config.min.js
+
 # Editor
 .vscode
 

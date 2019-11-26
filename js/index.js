@@ -1,4 +1,5 @@
 import Card from './Cards.min.js';
+import { MY_KEY }from './config.min.js'
 
 // Start of document ready function
 $( document ).ready(function() {
@@ -6,12 +7,13 @@ $( document ).ready(function() {
 
 
 let thereIsNews = false;
-const news = $('.news')
-const sections = $('.sections')
+const news = $('.news');
+const sections = $('.sections');
 const loader = $('.loader');
-const nytUrl = 'https://api.nytimes.com/svc/topstories/v2/'
-const endUrl = '.json?api-key=CLl9cdH4BgVqWucoFHZ3wdB1rsXAtoBt'
-const arrSection = [
+const nytUrl = 'https://api.nytimes.com/svc/topstories/v2/';
+const APIkey = MY_KEY
+const endUrl = '.json?api-key=' + APIkey;
+const arrSection = [ 
     'Select your category',
     'arts',
     'automobiles',
