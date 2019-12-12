@@ -47,8 +47,9 @@ main{
 footer{
     margin: 3em auto 0;
     justify-self: baseline;
-    p{
-        @include desktop {
+    @include desktop {
+        margin: 3em 2em 0;
+        p{
             margin-left: 2em;
         }
     }
