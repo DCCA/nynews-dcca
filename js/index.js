@@ -115,9 +115,18 @@ function toggleClasses(){
   $('select').toggleClass('select-with-news');
   $('.search-box').slideUp("slow");
   $('.search-box').slideDown("slow");
-  
+ 
 
+  $(".news").mouseover(function(){
+    $("figcaption").fadeOut("slow");
+});
+
+  $(".news").mouseleave(function(){
+     $("figcaption").fadeIn();
+ });
 }
+
+
 
 function createNewsCards(jData, news){
   for(let i = 0; i < 12 ; i++){
