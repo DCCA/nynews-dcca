@@ -113,6 +113,10 @@ function toggleClasses(){
   $('.logo').toggleClass('logo-with-news');
   $('.search-box').toggleClass('search-box-with-news');
   $('select').toggleClass('select-with-news');
+  $('.search-box').slideUp("slow");
+  $('.search-box').slideDown("slow");
+  
+
 }
 
 function createNewsCards(jData, news){

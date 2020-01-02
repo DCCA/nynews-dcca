@@ -89,7 +89,6 @@ select{
 .loader{
     height: 6em;
     display: none;
-    position: absolute;
     left: 46%;
     margin: auto;
     background: #0000006e;
@@ -129,6 +128,11 @@ figcaption{
     text-align: left;
     padding: 1em;
     word-wrap: break-word;
+}
+.figcaption1:hover {
+    display: none;
+
+
 }
 
 .card{
