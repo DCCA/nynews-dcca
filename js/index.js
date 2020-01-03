@@ -106,7 +106,12 @@ function start(){
     });
     // Add the event listener
     sections.on('change', makeApiCall)
+    
 }
+
+$('select').niceSelect();
+
+
 
 function toggleClasses(){
   $('main').toggleClass('main-with-news');

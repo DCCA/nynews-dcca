@@ -1,4 +1,5 @@
 @import '../sass/css-reset.scss', '../sass/fonts.scss';
+@import '../sass/nice-select.scss';
 
 // Variables
 $font: 'Open Sans', sans-serif, 'Arial';
@@ -31,7 +32,7 @@ body, html{
     background-color: black;
     font-size: $font-size;
     font-family: $font;
-    color: #ffffff;
+ 
 }
 
 main{
@@ -128,12 +129,10 @@ figcaption{
     text-align: left;
     padding: 1em;
     word-wrap: break-word;
+    color: #fff;
     
 }
 
-#figcaption1 {
- //display: none;
-}
 
 .card{
     position: relative;
