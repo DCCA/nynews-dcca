@@ -120,6 +120,7 @@ function toggleClasses(){
   $('select').toggleClass('select-with-news');
   $('.search-box').slideUp("slow");
   $('.search-box').slideDown("slow");
+
  
 
   $(".news").mouseover(function(){
